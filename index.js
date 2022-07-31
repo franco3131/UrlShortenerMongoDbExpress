@@ -72,11 +72,14 @@ async function addUrlToDbAndSendResponse(originalUrl,res){
 app.post('/api/shorturl', async function(req, res) {
   var originalUrl=req.body.url;
   var isUrl;
+
   try{
      isUrl=new URL(originalUrl);
   }catch(err){
      console.log(err); 
   }
+  
+
   if(isUrl!=undefined){
     addUrlToDbAndSendResponse(originalUrl,res);
   }else{
