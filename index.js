@@ -45,7 +45,7 @@ async function addUrlToDbAndSendResponse(originalUrl,res){
     var url;
     var foundData = await 
     urlData.findOne({"original_url":originalUrl});
-    var createAndSavePerson = function(original_url) {
+    var createAndSaveUrl = function(original_url) {
     url = new 
     urlData({original_url:original_url,
              short_url:existingData.length});
@@ -55,7 +55,7 @@ async function addUrlToDbAndSendResponse(originalUrl,res){
       });  
     }
     if(foundData===null){
-      createAndSavePerson(originalUrl);
+      createAndSaveUrl(originalUrl);
   //reformat to a different json structure 
       res.json({original_url:url['original_url'],
                 short_url:url['short_url']});
