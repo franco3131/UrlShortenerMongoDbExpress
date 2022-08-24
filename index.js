@@ -51,7 +51,7 @@ async function addUrlToDbAndSendResponse(originalUrl,res){
              short_url:existingData.length});
     url.save(function(err, data) {
       if (err) return console.error(err);
-        console.log(data+" saved to bookstore collection.");
+        console.log(data+" saved data");
       });  
     }
     if(foundData===null){
